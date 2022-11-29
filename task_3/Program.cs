@@ -2,7 +2,8 @@
 Console.WriteLine("Введите число");
 try
 {
-    int num = Convert.ToInt32(Console.ReadLine());
+
+    int num = mod(Convert.ToInt32(Console.ReadLine())); //Если пользователь ошибется и введет N<0
     Console.WriteLine($"Кубы чисел от 1 до {num}:");
     for (int i = 1; i <= num; i++)
     {
@@ -14,4 +15,10 @@ try
 catch
 {
     Console.WriteLine("Ошибка выполнения");
+}
+
+int mod(int num)    //Фукция модуля числа
+{
+    if (num<0) num=-num;
+    return num;
 }
